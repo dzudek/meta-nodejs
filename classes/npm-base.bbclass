@@ -11,7 +11,7 @@ NPM_REGISTRY ?= "https://registry.npmjs.org/"
 NPM_IGNORE = "${WORKDIR}/.npmignore"
 
 NPM ?= "npm"
-NPM_CACHE_DIR = "${TMPDIR}/npm_cache/${PF}"
+NPM_CACHE_DIR = "${DL_DIR}/npm_cache/${PF}"
 NPM_HOME_DIR = "${TMPDIR}/npm_home/${PF}"
 NPM_ARCH ?= "${@nodejs_map_dest_cpu(d.getVar('TARGET_ARCH', True), d)}"
 NPM_LD ?= "${CXX}"
@@ -68,7 +68,7 @@ oe_runnpm() {
 # Native npm
 
 NPM_NATIVE ?= "npm"
-NPM_CACHE_DIR_NATIVE = "${TMPDIR}/npm_cache_native/${PF}"
+NPM_CACHE_DIR_NATIVE = "${DL_DIR}/npm_cache_native/${PF}"
 NPM_HOME_DIR_NATIVE = "${TMPDIR}/npm_home_native/${PF}"
 NPM_ARCH_NATIVE ?= "${@nodejs_map_dest_cpu(d.getVar('BUILD_ARCH', True), d)}"
 NPM_LD_NATIVE ?= "${BUILD_CXX}"
